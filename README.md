@@ -14,6 +14,8 @@ storefront-service -> order-service -> inventory-service
 
 Each service exposes Prometheus metrics at `/actuator/prometheus` and exports OpenTelemetry traces to the collector over OTLP HTTP.
 
+* Note: OTLP stands for OpenTelemetry Protocol. It's the standard data transmission protocol used by OpenTelemetry to send telemetry data (traces, metrics, and logs) from instrumented applications to a backend or collector.
+
 ## Stack
 
 - Spring Boot `4.0.2`
