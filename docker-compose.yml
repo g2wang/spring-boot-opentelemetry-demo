@@ -4,7 +4,7 @@ services:
       context: ./inventory-service
     image: spring-otel-demo/inventory-service:latest
     environment:
-      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318/v1/traces
+      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://otel-collector:4318/v1/traces
       OTEL_EXPORTER_OTLP_METRICS_ENDPOINT: http://otel-collector:4318/v1/metrics
     ports:
       - "8082:8082"
@@ -18,7 +18,7 @@ services:
     image: spring-otel-demo/order-service:latest
     environment:
       INVENTORY_SERVICE_URL: http://inventory-service:8082
-      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318/v1/traces
+      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://otel-collector:4318/v1/traces
       OTEL_EXPORTER_OTLP_METRICS_ENDPOINT: http://otel-collector:4318/v1/metrics
     ports:
       - "8081:8081"
@@ -34,7 +34,7 @@ services:
     image: spring-otel-demo/storefront-service:latest
     environment:
       ORDER_SERVICE_URL: http://order-service:8081
-      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318/v1/traces
+      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://otel-collector:4318/v1/traces
       OTEL_EXPORTER_OTLP_METRICS_ENDPOINT: http://otel-collector:4318/v1/metrics
     ports:
       - "8080:8080"

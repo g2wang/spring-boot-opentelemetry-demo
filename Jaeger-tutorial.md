@@ -319,9 +319,11 @@ management:
   tracing:
     sampling:
       probability: 1.0
-  otlp:
+  opentelemetry:
     tracing:
-      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4318/v1/traces}
+      export:
+        otlp:
+          endpoint: ${OTEL_EXPORTER_OTLP_TRACES_ENDPOINT:http://localhost:4318/v1/traces}
 ```
 
 The sampling probability is set to `1.0`, which means every request is traced.
@@ -337,7 +339,7 @@ Check these things:
 - Did you generate traffic with `curl`?
 - Is Jaeger running at <http://localhost:16686>?
 - Is the OpenTelemetry Collector running?
-- Are the services configured with `OTEL_EXPORTER_OTLP_ENDPOINT`?
+- Are the services configured with `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT`?
 - Did you search the right service and time range in Jaeger?
 
 ### Only One Service Appears in a Trace
