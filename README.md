@@ -32,7 +32,7 @@ Build the service jars:
 mvn clean package
 ```
 
-Start the full stack:
+Start the full stack (everything in Docker, including the Spring boot services):
 
 ```bash
 docker compose up --build
@@ -66,7 +66,7 @@ jvm_memory_used_bytes
 process_cpu_usage
 ```
 
-## Run Services Without Docker
+## Run the Spring Boot Services outside of Docker
 
 Start the collector, Prometheus, Jaeger, and Grafana:
 
