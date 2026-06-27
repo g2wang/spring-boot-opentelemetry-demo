@@ -1,6 +1,9 @@
 spring:
   application:
     name: storefront-service
+  threads:
+     virtual:
+       enabled: true
 
 server:
   port: 8080
