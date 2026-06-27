@@ -127,3 +127,7 @@ Use `-XX:+ExitOnOutOfMemoryError` so the JVM exits cleanly and Kubernetes restar
 - Set up a **CloudWatch alarm** on pod restart count or container OOM metric from Container Insights
 
 The fastest path to root cause is: logs (`--previous`) → confirm OOM type → heap dump → MAT analysis.
+
+---
+
+## [Reference book: JVM Performance Engineering](https://www.scribd.com/document/749586101/JVM-performance-engineering-2024-4)
